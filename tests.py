@@ -62,3 +62,11 @@ class TestBooksCollector:
         collector.add_book_in_favorites("Book 1")
         collector.delete_book_from_favorites("Book 1")
         assert collector.favorites == []
+
+    def test_get_list_of_favorites_books(self, collector):
+        collector.add_new_book("Book 1")
+        collector.add_new_book("Book 2")
+        collector.add_book_in_favorites("Book 1")
+        collector.add_book_in_favorites("Book 2")
+        favorites = collector.get_list_of_favorites_books()
+        assert favorites == ["Book 1", "Book 2"]
