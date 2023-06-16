@@ -58,3 +58,4 @@ class TestBooksCollector:
         collector.add_book_in_favorites("Book 1")
         collector.delete_book_from_favorites("Book 1")
         assert "Book 1" not in collector.get_list_of_favorites_books()
+        
